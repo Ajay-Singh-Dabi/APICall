@@ -122,30 +122,32 @@ class MainActivity : AppCompatActivity() {
                 Log.i("Value","${responseData.data_list[item].value}")
             }
 
-//            val jsonObject = JSONObject(result)
-//            val message = jsonObject.optString("message")
-//            Log.i("Message", message)
-//            val userId = jsonObject.optInt("user_id")
-//            Log.i("User Id","$userId")
-//            val name = jsonObject.optString("name")
-//            Log.i("Message", name)
-//
-//            val profileDetailsObject = jsonObject.optJSONObject("profile_details")
-//            val isProfileCompleted  = profileDetailsObject.optBoolean("is_profile_completed")
-//            Log.i("Is Profile Completed", "$isProfileCompleted")
-//
-//
-//            val dataListArray = jsonObject.optJSONArray("data_list")
-//            Log.i("Data List Size", "${dataListArray.length()}")
-//            for (item in 0 until dataListArray.length()){
-//                Log.i("Value $item", "${dataListArray[item]}")
-//                val dataItemObject: JSONObject = dataListArray[item] as JSONObject
-//
-//                val id = dataItemObject.optInt("id")
-//                Log.i("id",id.toString())
-//                val value = dataItemObject.optString("value")
-//                Log.i("value",value)
-//            }
+            //can be done using this but lengthy
+
+            val jsonObject = JSONObject(result)
+            val message = jsonObject.optString("message")
+            Log.i("Message", message)
+            val userId = jsonObject.optInt("user_id")
+            Log.i("User Id","$userId")
+            val name = jsonObject.optString("name")
+            Log.i("Message", name)
+
+            val profileDetailsObject = jsonObject.optJSONObject("profile_details")
+            val isProfileCompleted  = profileDetailsObject.optBoolean("is_profile_completed")
+            Log.i("Is Profile Completed", "$isProfileCompleted")
+
+
+            val dataListArray = jsonObject.optJSONArray("data_list")
+            Log.i("Data List Size", "${dataListArray.length()}")
+            for (item in 0 until dataListArray.length()){
+                Log.i("Value $item", "${dataListArray[item]}")
+                val dataItemObject: JSONObject = dataListArray[item] as JSONObject
+
+                val id = dataItemObject.optInt("id")
+                Log.i("id",id.toString())
+                val value = dataItemObject.optString("value")
+                Log.i("value",value)
+            }
         }
 
         private fun showProgressDialog(){
